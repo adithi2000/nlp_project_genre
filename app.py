@@ -16,7 +16,7 @@ if st.button("Predict"):
         
         st.subheader("Topic Explanation:")
         st.markdown("**Topics:**")
-        st.markdown(len(results['explain_data']))
+        # st.markdown(len(results['explain_data']))
         # for i in results['explain_data']:
         #     st.markdown("---")
         #     topic_info = i
