@@ -24,10 +24,16 @@ if st.button("Predict"):
         topic_info=results['explain_data'][0]['topic_info']
         # st.json(topic_info)
         for topic,details in topic_info.items():
-            st.markdown(topic)
-            st.markdown(f"Score: {details['score']}")
-            st.markdown(f"top words: {details['top_words']}")
-            st.markdown(f"present summary word order: {details['present_words']}")
+            # st.markdown(topic)
+            # st.markdown(f"Score: {details['score']}")
+            # st.markdown(f"top words: {details['top_words']}")
+            # st.markdown(f"present summary word order: {details['present_words']}")
+            with st.expander(f"{topic}| Score: {details['score']:.4f}"):
+                st.write("**Top words:**")
+                st.write(",".join(details['top_words']))
+                st.write("**Present word order for the topic**")
+                st.write(",".join(details['present_words']))
+                             
     else:
         st.warning("Please enter some text for prediction.")
 
